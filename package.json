@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/greybax/MSEdgeSearchClicker/issues"
   },
-  "homepage": "https://github.com/greybax/MSEdgeSearchClicker#readme",
+  "homepage": "https://alfilatov.com/MSEdgeSearchClicker",
   "dependencies": {
     "prettier": "^2.7.1",
     "random-words": "^1.2.0"
