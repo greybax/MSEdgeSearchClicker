@@ -30,7 +30,6 @@ jobs:
           node-version: 16
       - run: npm install
       - run: npm run build
-      - run: npm run deploy
   # Single deploy job since we're just deploying
   deploy:
     environment:
