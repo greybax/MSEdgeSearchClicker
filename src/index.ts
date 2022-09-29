@@ -1,8 +1,7 @@
 import randomWords from 'random-words';
 
 const main = () => {
-  console.log();
-  const iframe = document.getElementById('msBingFrame') as any;
+  const iframe = document.getElementById('msBingFrame') as HTMLIFrameElement;
   let counter = 0;
   let intervalId: number;
 
