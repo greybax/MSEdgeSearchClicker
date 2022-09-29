@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -17,12 +19,13 @@
   "bugs": {
     "url": "https://github.com/greybax/MSEdgeSearchClicker/issues"
   },
-  "homepage": "https://alfilatov.com/MSEdgeSearchClicker",
+  "homepage": "https://greybax.github.io/MSEdgeSearchClicker",
   "dependencies": {
     "random-words": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^18.7.23",
+    "gh-pages": "^4.0.0",
     "typescript": "^4.8.4",
     "vite": "^3.1.3"
   }
