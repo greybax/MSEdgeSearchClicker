@@ -1,10 +1,15 @@
+import randomWords from 'random-words';
+
 const main = () => {
+  console.log();
   const iframe = document.getElementById('msBingFrame') as any;
   let counter = 0;
   let intervalId: number;
 
   const randomText = () => {
-    return (Math.random() + 1).toString(36).substring(2);
+    // random number between 1 and 10
+    const wordCount = Math.floor(Math.random() * 10) + 1; 
+    return randomWords(wordCount).join(' ');
   }
 
   const func = () => {

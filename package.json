@@ -2,10 +2,11 @@
   "name": "msedgesearchclicker",
   "description": "Microsoft Edge browser search clicker with random words",
   "version": "1.0.0",
-  "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc -p tsconfig.json"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -18,11 +19,11 @@
   },
   "homepage": "https://alfilatov.com/MSEdgeSearchClicker",
   "dependencies": {
-    "prettier": "^2.7.1",
     "random-words": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^18.7.23",
-    "typescript": "^4.8.4"
+    "typescript": "^4.8.4",
+    "vite": "^3.1.3"
   }
 }

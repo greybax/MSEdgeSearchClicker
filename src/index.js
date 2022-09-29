@@ -1,5 +1,7 @@
-"use strict";
+import randomWords from 'random-words';
 const main = () => {
+    // const randomWords = require('random-words');
+    console.log(randomWords(2));
     const iframe = document.getElementById('msBingFrame');
     let counter = 0;
     let intervalId;
