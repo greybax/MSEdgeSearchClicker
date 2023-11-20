@@ -13,7 +13,7 @@ const main = () => {
 
   const func = () => {
     const searchString = randomText();
-    iframe.src = `https://www.bing.com/search?q=${searchString}`;
+    iframe.src = `https://www.bing.com/search?q=${searchString}&PC=U316&FORM=CHROMN`;
     counter++;
     console.log('counter', counter);
     // browser
