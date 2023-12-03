@@ -5,28 +5,42 @@ const main = () => {
   let counter = 0;
   let intervalId: number;
 
+  const getRandomDelay = () => {
+    // Generate a random delay between 15,000 and 35,000 milliseconds
+    return Math.floor(Math.random() * (35000 - 15000 + 1)) + 15000;
+  }
+
   const randomText = () => {
-    // random number between 1 and 10
+    // Generate a random number between 1 and 10
     const wordCount = Math.floor(Math.random() * 10) + 1; 
-    return randomWords(wordCount).join(' ');
+    const randomWordsArray = randomWords(wordCount);
+
+    // Join words until the length is at least 100 symbols
+    while (randomWordsArray.join(' ').length < 100) {
+      randomWordsArray.push(randomWords(1)[0]);
+    }
+
+    return randomWordsArray.join(' ');
   }
 
   const func = () => {
     const searchString = randomText();
-    iframe.src = `https://www.bing.com/search?q=${searchString}&PC=U316&FORM=CHROMN`;
+    iframe.src = `https://www.bing.com/search?q=${searchString}`;
     counter++;
     console.log('counter', counter);
-    // browser
-    // 150 / 5 = 30 // search in bing
-    // 20 / 5 = 4   // search via bing
-    // mobile
-    // 100 / 5 = 20
+
     if (counter === 35) {
       clearInterval(intervalId);
+    } else {
+      // Schedule the next search with a random delay
+      const delay = getRandomDelay();
+      setTimeout(func, delay);
     }
   }
 
-  intervalId = setInterval(func, 30000) as any;
+  // Start the initial search
+  const initialDelay = getRandomDelay();
+  setTimeout(func, initialDelay);
 }
 
 main();
