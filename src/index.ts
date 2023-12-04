@@ -6,8 +6,8 @@ const main = () => {
   let intervalId: number;
 
   const getRandomDelay = () => {
-    // Generate a random delay between 15,000 and 35,000 milliseconds
-    return Math.floor(Math.random() * (35000 - 15000 + 1)) + 15000;
+    // Generate a random delay between 10,000 and 25,000 milliseconds
+    return Math.floor(Math.random() * (25000 - 10000 + 1)) + 10000;
   }
 
   const randomText = () => {
