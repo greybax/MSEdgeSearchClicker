@@ -6,7 +6,7 @@ const startSearch = () => {
   const maxDelayInput = document.getElementById('maxDelay') as HTMLInputElement;
   const searchLimitInput = document.getElementById('searchLimit') as HTMLInputElement;
 
-  let counter = 0;
+  var counter = 0;
   let intervalId: number;
 
   const getRandomDelay = () => {
