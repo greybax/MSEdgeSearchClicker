@@ -50,4 +50,6 @@ const startSearch = () => {
   setTimeout(func, initialDelay);
 };
 
+startSearch()
+
 export default startSearch
