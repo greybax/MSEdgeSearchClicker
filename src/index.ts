@@ -1,6 +1,5 @@
 import randomWords from 'random-words';
 
-// @ts-ignore
 const startSearch = () => {
   const iframe = document.getElementById('msBingFrame') as HTMLIFrameElement;
   const minDelayInput = document.getElementById('minDelay') as HTMLInputElement;
@@ -51,5 +50,3 @@ const startSearch = () => {
 };
 
 startSearch()
-
-export default startSearch
