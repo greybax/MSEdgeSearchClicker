@@ -1,7 +1,7 @@
 import randomWords from 'random-words';
 
 // @ts-ignore
-export const startSearch = () => {
+const startSearch = () => {
   const iframe = document.getElementById('msBingFrame') as HTMLIFrameElement;
   const minDelayInput = document.getElementById('minDelay') as HTMLInputElement;
   const maxDelayInput = document.getElementById('maxDelay') as HTMLInputElement;
@@ -49,3 +49,5 @@ export const startSearch = () => {
   const initialDelay = getRandomDelay();
   setTimeout(func, initialDelay);
 };
+
+export default startSearch
