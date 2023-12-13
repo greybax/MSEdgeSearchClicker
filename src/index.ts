@@ -1,13 +1,19 @@
 import randomWords from 'random-words';
 
-const main = () => {
+const startSearch = () => {
   const iframe = document.getElementById('msBingFrame') as HTMLIFrameElement;
+  const minDelayInput = document.getElementById('minDelay') as HTMLInputElement;
+  const maxDelayInput = document.getElementById('maxDelay') as HTMLInputElement;
+  const searchLimitInput = document.getElementById('searchLimit') as HTMLInputElement;
+
   let counter = 0;
   let intervalId: number;
 
   const getRandomDelay = () => {
-    // Generate a random delay between 10,000 and 25,000 milliseconds
-    return Math.floor(Math.random() * (25000 - 10000 + 1)) + 10000;
+    // Generate a random delay between user-defined minimum and maximum
+    const minDelay = parseInt(minDelayInput.value, 10);
+    const maxDelay = parseInt(maxDelayInput.value, 10);
+    return Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
   }
 
   const randomText = () => {
@@ -29,7 +35,7 @@ const main = () => {
     counter++;
     console.log('counter', counter);
 
-    if (counter === 35) {
+    if (counter >= parseInt(searchLimitInput.value, 10)) {
       clearInterval(intervalId);
     } else {
       // Schedule the next search with a random delay
@@ -41,6 +47,4 @@ const main = () => {
   // Start the initial search
   const initialDelay = getRandomDelay();
   setTimeout(func, initialDelay);
-}
-
-main();
+};
