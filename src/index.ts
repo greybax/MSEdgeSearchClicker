@@ -29,7 +29,7 @@ const startSearch = () => {
     return randomWordsArray.join(' ');
   }
 
-  const func = () => {
+  const makeSearch = () => {
     const searchString = randomText();
     iframe.src = `https://www.bing.com/search?q=${searchString}&PC=U316&FORM=CHROMN`;
     counter++;
@@ -40,13 +40,37 @@ const startSearch = () => {
     } else {
       // Schedule the next search with a random delay
       const delay = getRandomDelay();
-      setTimeout(func, delay);
+      setTimeout(makeSearch, delay);
     }
   }
 
-  // Start the initial search
-  const initialDelay = getRandomDelay();
-  setTimeout(func, initialDelay);
+  const makeSetOfSearches = () => {
+    // Make a set of 4 searches with intervals
+    let searchIndex = 0;
+    const makeSearchWithInterval = () => {
+      makeSearch();
+      searchIndex++;
+      if (searchIndex < 4) {
+        // Schedule the next search with an interval
+        const intervalDelay = getRandomDelay();
+        setTimeout(makeSearchWithInterval, intervalDelay);
+      } else {
+        // After the set of 4 searches, schedule the next set after a 5-minute delay
+        setTimeout(func, 5 * 60 * 1000);
+      }
+    }
+
+    // Start making the set of searches
+    makeSearchWithInterval();
+  }
+
+  const func = () => {
+    // Start the initial set of searches
+    makeSetOfSearches();
+  }
+
+  // Start the initial set of searches
+  func();
 };
 
-startSearch()
+startSearch();
