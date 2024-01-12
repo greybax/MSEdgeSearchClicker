@@ -26,7 +26,7 @@ const main = () => {
     }
   }
 
-  intervalId = setInterval(func, 30000) as any;
+  intervalId = setInterval(func, 3000) as any;
 }
 
 main();
