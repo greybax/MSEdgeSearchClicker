@@ -3,7 +3,6 @@ import { generate } from "random-words";
 const main = () => {
   const iframe = document.getElementById('msBingFrame') as HTMLIFrameElement;
   let counter = 0;
-  let intervalId: number;
 
   const randomText = () => {
     const wordCount = Math.floor(Math.random() * 10) + 1;
@@ -28,12 +27,15 @@ const main = () => {
     // 20 / 5 = 4   // search via bing
     // mobile
     // 100 / 5 = 20
-    if (counter === 35) {
-      clearInterval(intervalId);
+    // Random interval between 10s and 60s
+    const randomInterval = Math.floor(Math.random() * 50) * 1000 + 10000; // 10s to 60s
+
+    if (counter < 35) {
+      setTimeout(func, randomInterval);
     }
   }
 
-  intervalId = setInterval(func, 8000) as any;
+  func();
 }
 
 main();
