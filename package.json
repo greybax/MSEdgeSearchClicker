@@ -21,7 +21,7 @@
   },
   "homepage": "https://greybax.github.io/MSEdgeSearchClicker",
   "dependencies": {
-    "random-words": "^1.2.0"
+    "random-words": "^2.0.1"
   },
   "devDependencies": {
     "@types/node": "^18.19.1",

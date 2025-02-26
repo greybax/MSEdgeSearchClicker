@@ -1,4 +1,4 @@
-import randomWords from 'random-words';
+import { generate } from "random-words";
 
 const main = () => {
   const iframe = document.getElementById('msBingFrame') as HTMLIFrameElement;
@@ -6,9 +6,16 @@ const main = () => {
   let intervalId: number;
 
   const randomText = () => {
-    // random number between 1 and 10
-    const wordCount = Math.floor(Math.random() * 10) + 1; 
-    return randomWords(wordCount).join(' ');
+    const wordCount = Math.floor(Math.random() * 10) + 1;
+    const generatedText = generate(wordCount);
+    
+    // Type guard: check if generatedText is an array
+    if (Array.isArray(generatedText)) {
+      return generatedText.join(' ');
+    } else {
+      // If it's a single string, just return it
+      return generatedText;
+    }
   }
 
   const func = () => {
