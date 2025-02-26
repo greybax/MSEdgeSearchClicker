@@ -22,10 +22,9 @@ const main = () => {
     iframe.src = `https://www.bing.com/search?q=${searchString}&PC=U316&FORM=CHROMN`;
     // Random interval between 20s and 90s
     const randomInterval = Math.floor(Math.random() * 70) * 1000 + 20000;
-    console.log(`wait: ${randomInterval}s`);
 
     counter++;
-    console.log(`counter: ${counter}`);
+    console.log(`counter: ${counter}, wait: ${randomInterval}ms`);
     // browser
     // 150 / 5 = 30 // search in bing
     // 20 / 5 = 4   // search via bing
