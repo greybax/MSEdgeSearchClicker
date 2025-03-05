@@ -25,12 +25,16 @@ const main = () => {
 
     counter++;
     console.log(`counter: ${counter}, wait: ${randomInterval}ms`);
-    // browser
-    // 150 / 5 = 30 // search in bing
-    // 20 / 5 = 4   // search via bing
-    // mobile
-    // 100 / 5 = 20
-    if (counter < 35) {
+
+    if (counter % 3 === 0) {
+      console.log('Waiting for 4 minutes...');
+      setTimeout(func, 4 * 60 * 1000); // wait for 4 minutes
+    } else if (counter < 35) {
+      // browser
+      // 150 / 5 = 30 // search in bing
+      // 20 / 5 = 4   // search via bing
+      // mobile
+      // 100 / 5 = 20
       setTimeout(func, randomInterval);
     }
   }
