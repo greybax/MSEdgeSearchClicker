@@ -19,7 +19,7 @@ const main = () => {
 
   const func = () => {
     const searchString = randomText();
-    iframe.src = `https://www.bing.com/search?q=${searchString}&PC=U316&FORM=CHROMN`;
+    iframe.src = `https://www.bing.com/search?q=${searchString}&PC=U316&form=ASDSBZ`;
     // Random interval between 20s and 90s
     const randomInterval = Math.floor(Math.random() * 70) * 1000 + 20000;
 
